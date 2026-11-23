@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PersonaMail | Felicia Tan</title>
+  <meta name="description" content="An email-writing system with structured communication factor exploration, granular editing controls, and adaptive reuse of successful strategies, evaluated against standard LLM interfaces with 16 participants.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,100;1,9..144,300..500,100&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+<div class="aurora"></div>
+<nav><a class="brand" href="../../">Felicia Tan</a><a href="../../">Home</a><a class="here" href="../../research.html">Research</a></nav>
+<main class="proj">
+  <a class="crumb" href="../../research.html">&larr; All research</a>
+  <p><span class="tag">ACM IUI 2026</span></p>
+  <h1>PersonaMail: Learning and Adapting Personal Communication Preferences for Context-Aware Email Writing</h1>
+  <p class="byline">Rui Yao<sup>2</sup>, Qiuyuan Ren<sup>2</sup>, <strong>Felicia Fang-Yi Tan</strong><sup>1</sup>, Yang Chen<sup>2</sup>, Xiaoyu Zhang<sup>2</sup>, Shengdong Zhao<sup>2</sup></p>
+  <p class="aff"><sup>1</sup>New York University, Tandon School of Engineering &nbsp; <sup>2</sup>City University of Hong Kong</p>
+  <div class="buttons"><a href="https://dl.acm.org/doi/10.1145/3742413.3789123"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Paper (ACM Digital Library)</a><a href="#cite"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>BibTeX</a></div>
+  
+
+  <p class="tldr reveal">PersonaMail addresses three challenges identified in formative studies through structured communication factor exploration, granular editing controls, and adaptive reuse of successful strategies. Compared against standard LLM interfaces, it showed improved efficiency in both immediate and repeated use, alongside higher user satisfaction.</p>
+  <div class="keynums reveal"><div class="keynum"><b>3</b><span>key challenges identified in formative studies</span></div><div class="keynum"><b>16</b><span>participants in the evaluation</span></div><div class="keynum"><b>34.8%</b><span>higher draft quality than standard LLM interfaces (M = 5.81/7 vs. 4.31/7)</span></div><div class="keynum"><b>42%</b><span>faster task completion with adaptive reuse</span></div></div>
+
+  <h2 class="reveal">Why it matters</h2>
+  <p class="reveal">LLM-assisted writing has seen rapid adoption in interpersonal communication, yet current systems often fail to capture the subtle tones essential for effectiveness. Email writing exemplifies this challenge: effective messages require careful alignment with intent, relationship, and context beyond mere fluency.</p>
+  <figure class="fig reveal" style="width:min(1040px, calc(100vw - 4rem));margin-left:calc((100% - min(1040px, calc(100vw - 4rem))) / 2)">
+  <img src="../../assets/projects/personamail/fig1-overview.png" alt="PersonaMail system overview" onerror="this.closest('figure').classList.add('missing')">
+  <div class="ph"><b>Figure needed:</b> <code>assets/projects/personamail/fig1-overview.png</code><br>Paper Fig. 1: PersonaMail overview, contrasting a traditional LLM interface with the structured solution.</div>
+  <figcaption>PersonaMail versus a traditional LLM interface.</figcaption>
+</figure>
+
+  <h2 class="reveal">What we did</h2>
+  <ol class="steps reveal"><li><div><strong>Formative studies.</strong> Three key challenges: articulating nuanced communicative intent, making modifications at multiple levels of granularity, and reusing effective tone strategies across messages.</div></li><li><div><strong>PersonaMail.</strong> A system that addresses these gaps through structured communication factor exploration, granular editing controls, and adaptive reuse of successful strategies.</div></li><li><div><strong>Evaluation.</strong> A user study with 16 participants comparing PersonaMail against a standard LLM interface (Gemini with Gmail).</div></li></ol>
+  <figure class="fig reveal">
+  <img style="width:70%;display:block;margin:0 auto" src="../../assets/projects/personamail/editor.png" alt="The PersonaMail email editor with a selected sentence and suggested rewrites" onerror="this.closest('figure').classList.add('missing')">
+  <div class="ph"><b>Figure needed:</b> <code>assets/projects/personamail/editor.png</code><br>Screenshot of the PersonaMail editor with Quickfix suggestions.</div>
+  <figcaption>The editor: select a sentence and pick a suggested rewrite, such as a softer tone or more privacy.</figcaption>
+</figure>
+  
+
+  <h2 class="reveal">What we found</h2>
+  <div class="finding reveal"><strong>Higher draft quality, lower cognitive load.</strong> Structured factor exploration produced drafts rated 34.8% higher in quality than standard LLM interfaces (M = 5.81/7 vs. 4.31/7, p < 0.001) while reducing cognitive load by 24.5%.</div><div class="finding reveal"><strong>Targeted adjustments halved revision time.</strong> Intent-driven modifications and QuickFix enabled 61.94% of revisions through targeted adjustments, halving revision time.</div><div class="finding reveal"><strong>Adaptive reuse reduced setup time.</strong> Adaptive reuse reduced setup time by 58.5% in subsequent uses, with 42% faster task completion. First-time use required greater upfront investment in articulation (10 min 21 s vs. 6 min 2 s of prompting).</div><div class="finding reveal"><strong>Concrete alternatives avoided unproductive deliberation.</strong> Rather than becoming trapped in unproductive deliberation, users received concrete alternatives that allowed them to quickly navigate to preferred versions.</div>
+  <figure class="fig reveal">
+  <img style="width:80%;display:block;margin:0 auto" src="../../assets/projects/personamail/time.svg" alt="Time to write an email: baseline 15 min 24 s, PersonaMail first use 17 min 51 s, PersonaMail reuse 8 min 55 s" onerror="this.closest('figure').classList.add('missing')">
+  <div class="ph"><b>Figure needed:</b> <code>assets/projects/personamail/time.svg</code><br>Simple stacked bars of mean task time.</div>
+  <figcaption>Mean time per email, split into prompting and revising. Reusing saved strategies was the fastest.</figcaption>
+</figure>
+
+  <h2 class="reveal">Design implications</h2>
+  <ul class="impl reveal"><li><strong>Factor-based scaffolding for intent.</strong> Translate tacit social knowledge into explicit, adjustable factors (e.g., relationship closeness, emotional stakes) so users can externalize nuanced goals without articulating every unspoken detail.</li><li><strong>Communicative-unit and intent-driven control.</strong> Segment emails into functional sections (e.g., Opening_Salutation, Justification) and expose the AI's underlying reasoning as editable intents, so users can manipulate the social function of message segments without direct text editing.</li><li><strong>Adaptive reuse for continuity.</strong> Capture successful strategies as reusable “anchors” that preserve not just content but the underlying social logic.</li><li><strong>Privacy and ethical considerations.</strong> Personalized tone learning raises privacy concerns, and adaptive systems may reinforce communication patterns that limit users' expressive range.</li></ul>
+  
+
+  <h2 id="cite" class="reveal">Cite</h2>
+  <pre id="bib">@inproceedings{yao2026personamail,
+  title     = {PersonaMail: Learning and Adapting Personal Communication Preferences for Context-Aware Email Writing},
+  author    = {Yao, Rui and Ren, Qiuyuan and Tan, Felicia Fang-Yi and Chen, Yang and Zhang, Xiaoyu and Zhao, Shengdong},
+  booktitle = {Proceedings of the 31st International Conference on Intelligent User Interfaces},
+  series    = {IUI '26},
+  year      = {2026},
+  publisher = {ACM},
+  doi       = {10.1145/3742413.3789123}
+}</pre>
+  <button class="copy" data-copy="#bib">Copy BibTeX</button>
+</main>
+</body>
+</html>

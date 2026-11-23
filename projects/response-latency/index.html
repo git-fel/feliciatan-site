@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Response Latency and Task Type in Human-LLM Interaction | Felicia Tan</title>
+  <meta name="description" content="A controlled experiment varying time-to-first-token latency (2, 9, 20 seconds) across Creation and Advice tasks. Interaction behaviors were robust to latency, yet participants who experienced 2-second latencies rated the LLM&#x27;s outputs less thoughtful and useful.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,100;1,9..144,300..500,100&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+<div class="aurora"></div>
+<nav><a class="brand" href="../../">Felicia Tan</a><a href="../../">Home</a><a class="here" href="../../research.html">Research</a></nav>
+<main class="proj">
+  <a class="crumb" href="../../research.html">&larr; All research</a>
+  <p><span class="tag">ACM CHI 2026</span></p>
+  <h1>The Impact of Response Latency and Task Type on Human-LLM Interaction and Perception</h1>
+  <p class="byline"><strong>Felicia Fang-Yi Tan</strong><sup>1</sup>, Moritz Alexander Messerschmidt<sup>2</sup>, Wen Yin<sup>1</sup>, Oded Nov<sup>1</sup></p>
+  <p class="aff"><sup>1</sup>New York University, Tandon School of Engineering &nbsp; <sup>2</sup>Augmented Human Lab, National University of Singapore</p>
+  <div class="buttons"><a href="https://dl.acm.org/doi/full/10.1145/3772318.3790716"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Paper (ACM Digital Library)</a><a href="https://osf.io/367cw"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Dataset (OSF)</a><a href="#cite"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>BibTeX</a></div>
+  <p class="press">In the press: <a href="https://nyunews.com/news/2026/05/06/tandon-ai-response-time-study/">Washington Square News</a> &middot; <a href="https://www.earth.com/news/faster-isnt-better-why-slower-chatbots-seem-more-intelligent/">Earth.com</a> &middot; <a href="https://engineering.nyu.edu/news/why-faster-ai-isnt-always-better">NYU Tandon</a></p>
+
+  <p class="tldr reveal">User interaction behaviors were robust to latency, yet varied by task type: Creation tasks elicited more frequent prompting than Advice tasks. In contrast, participants who experienced 2-second latencies rated the LLM's outputs less thoughtful and useful than those who experienced 9- or 20-second latencies. Latency is not simply a cost to reduce but a tunable design variable with ethical implications.</p>
+  <div class="keynums reveal"><div class="keynum"><b>240</b><span>participants</span></div><div class="keynum"><b>2 / 9 / 20 s</b><span>time-to-first-token latency</span></div><div class="keynum"><b>2</b><span>task types: Creation and Advice</span></div><div class="keynum"><b>3 × 2</b><span>between-subjects design</span></div></div>
+
+  <h2 class="reveal">Why it matters</h2>
+  <p class="reveal">Responsiveness in large language model (LLM) applications is widely assumed to be critical, yet the impact of latency on user behavior and perception of output quality has not been systematically explored. Unlike the deterministic, transactional systems typically studied in System Response Time (SRT) research, outputs are probabilistic and unpredictable, and interaction takes conversational form.</p>
+  <figure class="fig reveal">
+  <img style="width:80%;display:block;margin:0 auto" src="../../assets/projects/response-latency/ttft.svg" alt="Timeline of response latency, defined as time to first token (TTFT): from prompt submission to the first token of the reply" onerror="this.closest('figure').classList.add('missing')">
+  <div class="ph"><b>Figure needed:</b> <code>assets/projects/response-latency/ttft.svg</code><br>Timeline of the manipulated variable, TTFT.</div>
+  <figcaption>Response latency is operationalized as time to first token (TTFT): the delay between submitting a prompt and the first token of the reply appearing. We set it to 2, 9 or 20 seconds.</figcaption>
+</figure>
+
+  <h2 class="reveal">What we did</h2>
+  <ol class="steps reveal"><li><div><strong>Interface.</strong> A custom GPT-4o interface in which time-to-first-token latency was set to 2, 9 or 20 seconds.</div></li><li><div><strong>Design.</strong> A 3 (Latency) × 2 (Task Type) between-subjects experiment. Creation tasks involve producing new content (e.g., writing, brainstorming, drafting). Advice tasks involve providing guidance, critique or evaluation.</div></li><li><div><strong>Measures.</strong> Interaction logs, post-task ratings of the perceived quality of the LLM's responses, and open-ended responses about the delays.</div></li></ol>
+  <figure class="fig reveal">
+  <img style="width:95%;display:block;margin:0 auto" src="../../assets/projects/response-latency/fig1-design.png" alt="The 2 by 3 study design" onerror="this.closest('figure').classList.add('missing')">
+  <div class="ph"><b>Figure needed:</b> <code>assets/projects/response-latency/fig1-design.png</code><br>Paper Fig. 1: the study design, six groups from two task types and three latency levels.</div>
+  <figcaption>Study design.</figcaption>
+</figure>
+  <p class="note reveal">We also contribute a reusable experimental platform for studying timing effects in human-LLM interaction, comprising an end-to-end LLM interaction system with latency control and interaction logging (<a href="https://github.com/AugmentMo/gpt-chatbot-emu">code on GitHub</a>), and the study's anonymized dataset (<a href="https://osf.io/367cw">OSF</a>).</p>
+
+  <h2 class="reveal">What we found</h2>
+  <div class="finding reveal"><strong>Behavior was robust to latency, yet varied by task type.</strong> Creation tasks elicited more frequent prompting than Advice tasks. Latency had no significant effect on the behavioral measures.</div><div class="finding reveal"><strong>2-second latencies were rated less thoughtful and useful.</strong> Participants who experienced 2-second latencies rated the LLM's outputs less thoughtful and useful than those who experienced 9- or 20-second latencies.</div><div class="finding reveal"><strong>Delays were attributed to AI deliberation.</strong> Long waits occasionally shifted this interpretation toward frustration or concerns about reliability.</div>
+  <div class="callout reveal"><b>In participants' words</b>“It [the AI] was gathering information to formulate a thoughtful response.”<br>“I had longer to contemplate what my next query would be.”</div>
+
+  <h2 class="reveal">Design implications</h2>
+  <ul class="impl reveal"><li><strong>Instantaneous output need not be the priority.</strong> The shortest onset delay (2 s) was consistently rated less thoughtful and less useful than slower responses, which suggests that faster replies can undercut perceptions of depth.</li><li><strong>Mid-length pauses can be leveraged strategically.</strong> Moderate waits (≈9 s) were occasionally reframed by participants as useful, with some reporting they used the time to re-read instructions or plan next steps. Latency can be repurposed as a resource.</li><li><strong>Mitigate the costs of long delays.</strong> Even at 20 s, latency did not substantially alter prompting behavior, though a subset of participants reported concerns about system reliability.</li><li><strong>Calibrate latency to task orientation.</strong> Creation tasks elicited more prompting than Advice tasks, so latency design should be task-aware rather than uniform.</li><li><strong>Be transparent when timing is intentionally shaped.</strong> Without transparency, users may conflate interactional pacing with signals of epistemic depth, leading to distorted trust calibration.</li></ul>
+  
+
+  <h2 id="cite" class="reveal">Cite</h2>
+  <pre id="bib">@inproceedings{tan2026latency,
+  title     = {The Impact of Response Latency and Task Type on Human-LLM Interaction and Perception},
+  author    = {Tan, Felicia Fang-Yi and Messerschmidt, Moritz Alexander and Yin, Wen and Nov, Oded},
+  booktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
+  series    = {CHI '26},
+  year      = {2026},
+  publisher = {ACM},
+  doi       = {10.1145/3772318.3790716}
+}</pre>
+  <button class="copy" data-copy="#bib">Copy BibTeX</button>
+</main>
+</body>
+</html>

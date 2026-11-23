@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Usage Limits and Token Anxiety | Felicia Tan</title>
+  <meta name="description" content="A survey of frequent AI users (N = 953) and an experimental evaluation (N = 135) of resource visibility, which significantly increased token anxiety, model-switching, and exploratory behavior without improving resource utilization or prompting strategy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,100;1,9..144,300..500,100&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+<div class="aurora"></div>
+<nav><a class="brand" href="../../">Felicia Tan</a><a href="../../">Home</a><a class="here" href="../../research.html">Research</a></nav>
+<main class="proj">
+  <a class="crumb" href="../../research.html">&larr; All research</a>
+  <p><span class="tag">Preprint</span></p>
+  <h1>AI Usage Limits and Token Anxiety: The Effects of Resource Visibility on Model Selection, Prompting, and Trust in AI Recommendations</h1>
+  <p class="byline"><strong>Felicia Fang-Yi Tan</strong><sup>1</sup>, Sandeep Avula<sup>2</sup>, Oded Nov<sup>1</sup></p>
+  <p class="aff"><sup>1</sup>New York University, Tandon School of Engineering &nbsp; <sup>2</sup>Microsoft</p>
+  <div class="buttons"><a href="https://drive.google.com/file/d/1FS8GfCKi0Jhe9-0CU8bkeP9P_XCXzcoB/view"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Preprint (PDF)</a></div>
+  
+
+  <p class="tldr reveal">Resource visibility significantly increased token anxiety, model-switching, and exploratory behavior without improving resource utilization or prompting strategy. While users generally trusted model recommendations, they rarely adopted them. Resource visibility does not directly translate to resource manageability.</p>
+  <div class="keynums reveal"><div class="keynum"><b>953</b><span>frequent AI users surveyed</span></div><div class="keynum"><b>94%</b><span>of users encounter usage limits</span></div><div class="keynum"><b>135</b><span>participants in the experimental evaluation</span></div><div class="keynum"><b>5.4%</b><span>of recommendations acted upon</span></div></div>
+
+  <h2 class="reveal">Why it matters</h2>
+  <p class="reveal">AI use is among the fastest-growing categories of technology expenditure, and providers have increasingly imposed token budgets and usage limits on users. These cost-containment strategies shift the burden of resource management onto end users. How users experience, work around, and want to be informed about limits remains understudied.</p>
+  <figure class="fig reveal">
+  <img src="../../assets/projects/resource-visible/fig1-system.png" alt="The prototype chat interface showing a live message cost estimate and credit balance" onerror="this.closest('figure').classList.add('missing')">
+  <div class="ph"><b>Figure needed:</b> <code>assets/projects/resource-visible/fig1-system.png</code><br>Paper Fig. 1: the system in use, with the live cost estimate and running credit balance beside the composer.</div>
+  <figcaption>The prototype: persistent credit tracking and a live cost estimate while typing.</figcaption>
+</figure>
+
+  <h2 class="reveal">What we did</h2>
+  <ol class="steps reveal"><li><div><strong>Survey (N = 953).</strong> A survey of frequent AI users on how they experience, work around, and want to be informed about limits. We organize user behaviors across three temporal phases: pre-task anticipation, in-task regulation, and post-disruption recovery.</div></li><li><div><strong>Design.</strong> Deriving four design challenges, we built a proof-of-concept chat interface featuring persistent AI resource tracking, message cost estimation, and explainable model recommendations.</div></li><li><div><strong>Experimental evaluation (N = 135).</strong> Three conditions: resource opacity (Resource-Opaque), resource visibility (Resource-Visible), and resource visibility with a model recommender (Resource-Visible + Recommendation).</div></li></ol>
+  <figure class="fig reveal">
+  <img src="../../assets/projects/resource-visible/fig3-conditions.png" alt="The three interface conditions side by side" onerror="this.closest('figure').classList.add('missing')">
+  <div class="ph"><b>Figure needed:</b> <code>assets/projects/resource-visible/fig3-conditions.png</code><br>Paper Fig. 3: the three interface conditions side by side (your Canva design named "Conditions" looks like the source).</div>
+  <figcaption>The three experimental conditions.</figcaption>
+</figure>
+  
+
+  <h2 class="reveal">What we found</h2>
+  <div class="finding reveal"><strong>Users manage limits reactively more than proactively.</strong> 94% of users encounter usage limits, relying far more on reactive post-disruption recovery strategies (e.g., summarizing context for migration into a new chat) than on pre-task anticipatory or in-task regulatory strategies. Limit information was rated most useful before starting a task (66%) and during execution (58%).</div><div class="finding reveal"><strong>Resource visibility increased anxiety and model-switching.</strong> Making resource availability visible significantly increased token anxiety, model-switching, and exploratory behavior.</div><div class="finding reveal"><strong>It did not improve resource utilization or prompting strategy.</strong> Seeing a depleting AI credit balance pushed participants to “fidget” with model selection, a reactive, low-cost activity substituting for improved resource management.</div><div class="finding reveal"><strong>Recommendations were trusted but rarely adopted.</strong> Explainable recommendations elicited moderately high trust ratings, yet users rarely acted upon them (5.4%).</div>
+  <figure class="fig reveal">
+  <img src="../../assets/projects/resource-visible/fig4-results.png" alt="Token anxiety, model switch count and model-picker opens by condition" onerror="this.closest('figure').classList.add('missing')">
+  <div class="ph"><b>Figure needed:</b> <code>assets/projects/resource-visible/fig4-results.png</code><br>Paper Fig. 4: token anxiety, model-switch count and model-picker opens by condition.</div>
+  <figcaption>Anxiety and model switching by interface condition.</figcaption>
+</figure>
+
+  <h2 class="reveal">Design implications</h2>
+  <ul class="impl reveal"><li><strong>Visibility isn't manageability.</strong> Interfaces should prioritize designing for the decision rather than the display. Information timed only to when it is useful, such as that made visible at decision points, may carry informational benefit without the cognitive cost.</li><li><strong>Evaluate system guidance beyond utilization metrics.</strong> Click-in acceptance rates proved insufficient for evaluating the recommendation feature. Future evaluations should capture broader signals of value, to avoid misclassifying non-utilization as feature bloat.</li><li><strong>Keep auto-routing legible.</strong> Users value system guidance as a form of psychological reassurance, one that depends on guidance remaining visible and optional rather than silent and automatic.</li></ul>
+  
+
+  
+</main>
+</body>
+</html>

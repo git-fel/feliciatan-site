@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 440" font-family="'Work Sans', system-ui, -apple-system, 'Segoe UI', sans-serif">
+<line x1="140" y1="210" x2="1480" y2="210" stroke="#e6d3bd" stroke-width="10" stroke-linecap="round"/>
+<line x1="140" y1="210" x2="820" y2="210" stroke="#ad6d4f" stroke-width="22" stroke-linecap="round"/>
+<circle cx="140" cy="210" r="26" fill="#4a3a2f"/><circle cx="820" cy="210" r="26" fill="#ad6d4f"/>
+<rect x="850" y="188" width="78" height="44" rx="12" fill="#4a3a2f" opacity="0.9"/><rect x="950" y="188" width="78" height="44" rx="12" fill="#4a3a2f" opacity="0.8"/><rect x="1050" y="188" width="78" height="44" rx="12" fill="#4a3a2f" opacity="0.7"/><rect x="1150" y="188" width="78" height="44" rx="12" fill="#4a3a2f" opacity="0.6"/><rect x="1250" y="188" width="78" height="44" rx="12" fill="#4a3a2f" opacity="0.5"/><rect x="1350" y="188" width="78" height="44" rx="12" fill="#4a3a2f" opacity="0.4"/>
+<text x="100" y="84" font-size="38" font-weight="600" fill="#4a3a2f">Prompt submitted</text>
+<text x="100" y="128" font-size="32" fill="#4a3a2f">t = 0</text>
+<text x="820" y="84" font-size="38" font-weight="600" fill="#4a3a2f">First token rendered</text>
+<text x="820" y="128" font-size="32" fill="#4a3a2f">remaining tokens then stream in</text>
+<path d="M140 280 L140 305 L820 305 L820 280" fill="none" stroke="#ad6d4f" stroke-width="6" stroke-linejoin="round"/>
+<text x="480" y="357" font-size="42" font-weight="700" fill="#ad6d4f" text-anchor="middle">TTFT: time to first token</text>
+<text x="480" y="406" font-size="32" fill="#4a3a2f" text-anchor="middle">manipulated at 2, 9 or 20 seconds</text>
+</svg>

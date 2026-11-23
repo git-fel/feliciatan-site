@@ -1,0 +1,221 @@
+/* =====================================================================
+   Shared stylesheet for every page.
+   Read it top to bottom: 1) design tokens  2) base  3) nav  4) hero
+   5) cards  6) research list  7) project page  8) motion & accessibility
+   ===================================================================== */
+
+/* ---------- 1. Design tokens: change colors and fonts HERE only ---------- */
+:root {
+  --bg: #fdfaf6;            /* near-white with a hint of warmth */
+  --surface: #ffffff;
+  --ink: #4a3a2f;           /* light cocoa */
+  --muted: #85776a;
+  --line: rgba(74, 58, 47, .12);
+  --accent: #ad6d4f;        /* light clay */
+  --accent2: #dcc0a0;       /* sand */
+  --soft: #f6efe6;
+  --serif: "Fraunces", Georgia, "Times New Roman", serif;
+  --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius: 22px;
+  --ease: cubic-bezier(.22, .8, .24, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1512; --surface: #241d18; --ink: #f3ebe2; --muted: #b3a698;
+    --line: rgba(243, 235, 226, .12); --accent: #e0a98a; --accent2: #e3c08f; --soft: #2b231d;
+  }
+}
+@media (prefers-color-scheme: dark) { .filters button.on, .buttons a, .more, ::selection { color: #1a1512; } }
+
+/* ---------- 2. Base ---------- */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font: 17px/1.65 var(--sans); color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+main { max-width: 920px; margin: 0 auto; padding: 1rem 1.25rem 5rem; position: relative; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 300; font-variation-settings: "SOFT" 100, "WONK" 0; letter-spacing: -.01em; line-height: 1.1; }
+h2 { font-size: 2.2rem; margin: 4rem 0 1.4rem; position: relative; padding-bottom: .6rem; }
+h2::after { content: ""; position: absolute; left: 0; bottom: 0; height: 3px; width: 56px; border-radius: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width .6s var(--ease); }
+.in h2::after, h2.in::after { width: 120px; }
+h3 { font-size: 1.35rem; color: var(--muted); margin: 2rem 0 .6rem; }
+a { color: var(--accent); }
+::selection { background: var(--accent); color: #fff; }
+:focus-visible { outline: 3px solid var(--accent2); outline-offset: 3px; border-radius: 6px; }
+
+/* Soft drifting color blobs behind everything (pure CSS, no images) */
+.aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.aurora::before, .aurora::after { content: ""; position: absolute; width: 55vmax; height: 55vmax; border-radius: 50%; filter: blur(90px); opacity: .16; }
+.aurora::before { background: var(--accent2); top: -20vmax; right: -15vmax; animation: drift1 22s ease-in-out infinite alternate; }
+.aurora::after  { background: var(--accent); bottom: -25vmax; left: -20vmax; opacity: .14; animation: drift2 26s ease-in-out infinite alternate; }
+@keyframes drift1 { to { transform: translate(-8vmax, 10vmax) scale(1.15); } }
+@keyframes drift2 { to { transform: translate(10vmax, -8vmax) scale(1.1); } }
+
+/* ---------- 3. Navigation (sticky, frosted glass) ---------- */
+nav { position: sticky; top: 0; z-index: 10; display: flex; gap: 1.8rem; align-items: baseline; padding: 1rem max(1.25rem, calc((100% - 920px) / 2));
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: color-mix(in srgb, var(--bg) 72%, transparent);
+  border-bottom: 1px solid transparent; transition: border-color .3s; }
+nav.scrolled { border-bottom-color: var(--line); }
+nav .brand { font-family: var(--serif); font-size: 1.5rem; margin-right: auto; color: var(--ink); text-decoration: none; }
+/* The FT monogram: a transparent PNG used as a mask, so it takes the page's ink color (works in dark mode too). */
+nav .brand .logo { display: block; width: 46px; height: 46px; background-color: var(--ink); -webkit-mask: url(logo.png) center / contain no-repeat; mask: url(logo.png) center / contain no-repeat; }
+nav a:not(.brand) { color: var(--muted); text-decoration: none; position: relative; font-size: .95rem; padding-bottom: 2px; transition: color .2s; }
+nav a:not(.brand)::after { content: ""; position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: var(--accent);
+  transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+nav a:not(.brand):hover, nav a.here { color: var(--ink); }
+nav a:not(.brand):hover::after, nav a.here::after { transform: scaleX(1); }
+
+/* ---------- 4. Hero (homepage top) ---------- */
+.hero { display: flex; flex-direction: row-reverse; gap: 3rem; align-items: center; padding: 3rem 0 1rem; }
+.hero .intro { flex: 1; }
+.eyebrow { font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); font-weight: 600; margin: 0 0 .8rem; }
+.hero h1 { font-size: clamp(3.2rem, 8vw, 5.4rem); margin: 0 0 .6rem;
+  background: linear-gradient(100deg, var(--ink) 40%, var(--accent) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.tagline { font-family: var(--serif); font-size: clamp(1.3rem, 2.6vw, 1.65rem); line-height: 1.35; color: var(--ink); margin: 0 0 1.4rem; max-width: 33rem; text-wrap: balance; }
+.links { display: flex; flex-wrap: wrap; gap: .7rem; }
+.links a { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem 1.1rem; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); color: var(--ink);
+  text-decoration: none; font-size: .9rem; font-weight: 500; transition: transform .25s var(--ease), border-color .25s, box-shadow .25s; }
+.links a:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 25%, transparent); }
+
+/* Headshot: a plain circle with a soft shadow. Nothing else. */
+.avatar { width: 220px; height: 220px; flex: none; }
+.avatar .frame { width: 100%; height: 100%; overflow: hidden; border-radius: 50%; box-shadow: 0 18px 40px -20px rgba(74, 52, 38, .5); }
+.avatar img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; display: block; }
+
+.bio p { max-width: 42rem; }
+.bio p:first-child::first-letter { font-family: var(--serif); font-size: 3.4rem; float: left; line-height: .85; padding: .25rem .5rem 0 0; color: var(--accent); }
+
+/* ---------- 5. Cards (Recent research) ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; }
+.grid.recent { grid-template-columns: repeat(2, 1fr); }
+.card { --mx: 50%; --my: 50%; position: relative; display: block; overflow: hidden; border-radius: var(--radius); background: var(--surface);
+  border: 1px solid var(--line); text-decoration: none; color: inherit;
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .3s; }
+/* spotlight that follows the mouse (position set by site.js) */
+.card::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(420px circle at var(--mx) var(--my), color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%); }
+.card:hover { transform: translateY(-6px); border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); box-shadow: 0 22px 44px -18px color-mix(in srgb, var(--accent) 45%, transparent); }
+.card:hover::before { opacity: 1; }
+.card .thumb { aspect-ratio: 16 / 9; overflow: hidden; background: linear-gradient(120deg, var(--accent), var(--accent2), var(--accent)); background-size: 200% 200%; animation: shimmer 8s ease-in-out infinite alternate; }
+.card .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+.card:hover .thumb img { transform: scale(1.06); }
+@keyframes shimmer { to { background-position: 100% 100%; } }
+.card .body { padding: 1.1rem 1.3rem 1.4rem; position: relative; }
+.card b { display: block; margin: .5rem 0 .4rem; font-family: var(--serif); font-weight: 400; font-variation-settings: "SOFT" 100; font-size: 1.45rem; line-height: 1.2; }
+.card small { display: block; color: var(--muted); font-size: .92rem; line-height: 1.55; }
+.card .body::after { content: "\2197"; position: absolute; top: 1.1rem; right: 1.3rem; color: var(--accent); opacity: 0; transform: translate(-6px, 6px); transition: all .35s var(--ease); }
+.card:hover .body::after { opacity: 1; transform: none; }
+.tag { display: inline-block; font-size: .72rem; font-weight: 600; letter-spacing: .04em; padding: .15rem .65rem; border-radius: 999px; color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.more { display: flex; width: fit-content; align-items: center; gap: .7rem; margin: 2.4rem auto 0; padding: .95rem 2rem; border-radius: 999px;
+  background: var(--accent); color: #fff; font-size: 1.1rem; font-weight: 600; letter-spacing: .01em; text-decoration: none;
+  box-shadow: 0 12px 28px -10px color-mix(in srgb, var(--accent) 70%, transparent); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+.more::after { content: "\2192"; font-size: 1.3rem; transition: transform .3s var(--ease); }
+.more:hover { transform: translateY(-3px); box-shadow: 0 18px 34px -10px color-mix(in srgb, var(--accent) 80%, transparent); }
+.more:hover::after { transform: translateX(6px); }
+
+/* ---------- 6. Lists of papers / media (Research page, media) ---------- */
+.pub { margin: 0; padding: 1.2rem 1rem 1.2rem 1.2rem; border-left: 3px solid transparent; border-radius: 0 12px 12px 0;
+  transition: border-color .3s, background .3s, padding .35s var(--ease); }
+.pub:hover { border-left-color: var(--accent); background: color-mix(in srgb, var(--accent) 6%, transparent); padding-left: 1.6rem; }
+.pub a.title { font-family: var(--serif); font-size: 1.35rem; line-height: 1.25; color: var(--ink); text-decoration: none; }
+.pub a.title:hover { color: var(--accent); }
+.pub .meta { display: block; color: var(--muted); font-size: .9rem; margin-top: .25rem; }
+.pub .about { display: block; margin-top: .35rem; }
+.pub.pop { animation: pop .45s var(--ease); }
+@keyframes pop { from { opacity: 0; transform: translateY(10px) scale(.98); } }
+.chips { margin: .6rem 0 0; } .chip { display: inline-block; font-size: .72rem; padding: .08rem .6rem; margin: 0 .35rem .3rem 0; border-radius: 999px; background: var(--soft); color: var(--muted); }
+.filters { position: sticky; top: 3.6rem; z-index: 5; padding: .7rem 0; background: color-mix(in srgb, var(--bg) 80%, transparent); backdrop-filter: blur(10px); }
+.filters button { font: inherit; font-size: .85rem; font-weight: 500; margin: 0 .4rem .4rem 0; padding: .35rem .95rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink); transition: all .25s var(--ease); }
+.filters button:hover { border-color: var(--accent); transform: translateY(-2px); }
+.filters button.on { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 35%, transparent); }
+
+/* ---------- 7. Project page pieces ---------- */
+.authors, .venue { color: var(--muted); margin: .2rem 0; }
+.buttons a { display: inline-block; margin: .9rem .5rem 0 0; padding: .5rem 1.2rem; border-radius: 999px; background: var(--accent); color: #fff; text-decoration: none; transition: transform .25s var(--ease); }
+.buttons a:hover { transform: translateY(-2px); }
+.buttons a.disabled { background: var(--soft); color: var(--muted); pointer-events: none; }
+.tldr { background: var(--soft); padding: 1.1rem 1.3rem; border-radius: var(--radius); border-left: 4px solid var(--accent); }
+.todo { outline: 2px dashed #e0a100; padding: .2rem .5rem; }  /* yellow dashes = Fel must fill in */
+pre { background: var(--soft); padding: 1rem; overflow-x: auto; border-radius: 12px; font-size: .85rem; }
+figure { margin: 1.8rem 0; } figcaption { color: var(--muted); font-size: .9rem; } img { max-width: 100%; }
+
+/* ---------- 8. Motion & accessibility ---------- */
+/* Elements with class "reveal" fade up as they scroll into view (site.js adds .in). Only hidden if JavaScript runs. */
+.js .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (max-width: 700px) {
+  .hero { flex-direction: column; align-items: flex-start; gap: 1.8rem; padding-top: 1.5rem; }
+  .avatar { width: 170px; height: 170px; }
+  .grid.recent { grid-template-columns: 1fr; }
+  h2 { font-size: 1.9rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+
+/* Icons inside the Email / CV / Scholar buttons */
+.links svg, .award svg { width: 17px; height: 17px; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.links a:hover svg { color: var(--accent); }
+/* Award badge on papers with an honorable mention */
+.award { display: inline-flex; align-items: center; gap: .35rem; margin-top: .45rem; padding: .12rem .7rem .12rem .55rem; border-radius: 999px; font-size: .78rem; font-weight: 600;
+  color: var(--accent); background: color-mix(in srgb, var(--accent2) 45%, transparent); }
+.award svg { width: 15px; height: 15px; }
+
+/* Research list: venue is the credibility signal, so it gets weight and color; authors are readable, with your name in bold */
+.pub .venue { display: block; margin-top: .35rem; font-size: .95rem; font-weight: 600; color: var(--accent); letter-spacing: .01em; }
+.pub .authors { display: block; margin-top: .1rem; font-size: 1rem; color: var(--muted); }
+.pub .authors strong { color: var(--ink); font-weight: 700; }
+/* Evidence chips (study type and sample size) look slightly different from topic chips */
+.chip.stat { background: transparent; border: 1px solid var(--line); color: var(--ink); }
+/* Honorable Mention sits on the venue line, right beside the venue name */
+.pub .venue .award { margin: 0 0 0 .55rem; vertical-align: middle; }
+
+/* =====================================================================
+   Project pages (projects/*/index.html): one narrow reading column, built to be skimmed
+   ===================================================================== */
+.proj { max-width: 760px; margin: 0 auto; padding: 1rem 1.25rem 5rem; }
+.proj p, .proj li { max-width: 68ch; }
+.crumb { display: inline-block; margin: 1rem 0 1.2rem; color: var(--muted); text-decoration: none; font-size: .92rem; }
+.crumb:hover { color: var(--accent); }
+.proj h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.1; margin: .4rem 0 1.1rem; }
+.byline { margin: .2rem 0; font-size: 1.05rem; } .byline strong { color: var(--ink); }
+.aff { margin: .2rem 0 0; font-size: .88rem; color: var(--muted); }
+.proj .buttons { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.3rem 0 .4rem; }
+.proj .buttons a { display: inline-flex; align-items: center; gap: .5rem; margin: 0; padding: .55rem 1.2rem; font-size: .92rem; font-weight: 500; }
+.proj .buttons svg, .copy svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.press { font-size: .9rem; color: var(--muted); margin: .6rem 0 0; } .press a { color: var(--accent); }
+.proj h2 { font-size: 1.8rem; margin: 3.2rem 0 1rem; padding-bottom: .5rem; }
+.tldr { font-family: var(--serif); font-size: 1.3rem; line-height: 1.5; margin: 2rem 0 1.2rem; padding: 1.3rem 1.5rem; border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 4px solid var(--accent); background: var(--soft); max-width: none; }
+.keynums { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: .8rem; margin: 0 0 1rem; }
+.keynum { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.1rem; }
+.keynum b { display: block; font-family: var(--serif); font-weight: 400; font-size: 2rem; line-height: 1.05; color: var(--accent); }
+.keynum span { display: block; margin-top: .35rem; font-size: .84rem; line-height: 1.35; color: var(--muted); }
+.steps { list-style: none; counter-reset: step; padding: 0; margin: 0; }
+.steps li { counter-increment: step; display: flex; gap: 1rem; margin: 1rem 0; max-width: none; }
+.steps li::before { content: counter(step); flex: none; width: 2rem; height: 2rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--accent); color: #fff; font-weight: 600; font-size: .9rem; }
+.finding { border-left: 3px solid var(--accent2); padding: .15rem 0 .15rem 1.1rem; margin: 1.2rem 0; max-width: 68ch; }
+.finding strong { display: block; color: var(--ink); }
+.impl { padding-left: 1.1rem; } .impl li { margin: .9rem 0; } .impl strong { color: var(--ink); }
+.note, .callout { background: var(--soft); border-radius: 14px; padding: 1rem 1.2rem; max-width: none; margin: 1.5rem 0; font-size: .95rem; }
+.callout b { display: block; margin-bottom: .3rem; font-family: var(--serif); font-weight: 400; font-size: 1.2rem; }
+.flow { list-style: none; counter-reset: f; padding: 0; margin: 1.6rem 0; display: grid; gap: .7rem; }
+.flow li { counter-increment: f; position: relative; padding: .9rem 1rem .9rem 3.2rem; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; max-width: none; }
+.flow li::before { content: counter(f); position: absolute; left: 1rem; top: .85rem; width: 1.6rem; height: 1.6rem; border-radius: 50%; display: grid; place-items: center;
+  background: var(--soft); color: var(--accent); font-weight: 600; font-size: .85rem; }
+.flow b { display: block; color: var(--ink); }
+/* Figures: shows the image when the file exists, otherwise a clear "figure needed" box */
+.fig { margin: 1.8rem 0; }
+.fig img { width: 100%; height: auto; display: block; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); }
+.fig .ph { display: none; }
+.fig.missing img { display: none; }
+.fig.missing .ph { display: block; padding: 1.6rem 1.2rem; border: 2px dashed #e0a100; border-radius: 14px; color: var(--muted); font-size: .9rem; }
+.fig figcaption { margin-top: .5rem; font-size: .88rem; color: var(--muted); }
+.copy { display: inline-flex; align-items: center; gap: .5rem; font: inherit; font-size: .88rem; margin-top: .4rem; padding: .4rem 1rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.copy:hover { border-color: var(--accent); }
+@media (max-width: 700px) { .tldr { font-size: 1.15rem; } .keynum b { font-size: 1.7rem; } }
+

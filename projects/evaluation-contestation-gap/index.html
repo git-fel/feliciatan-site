@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Evaluation-Contestation Gap | Felicia Tan</title>
+  <meta name="description" content="A recall-based survey of 737 users: of those who rated AI advice an imperfect fit, 76.2% did not contest it, including 70.0% of those who evaluated it critically. We term this the evaluation–contestation gap.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,100;1,9..144,300..500,100&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+<div class="aurora"></div>
+<nav><a class="brand" href="../../">Felicia Tan</a><a href="../../">Home</a><a class="here" href="../../research.html">Research</a></nav>
+<main class="proj">
+  <a class="crumb" href="../../research.html">&larr; All research</a>
+  <p><span class="tag">Preprint</span></p>
+  <h1>The Evaluation–Contestation Gap: Users Rarely Contest Misfitting Conversational AI Advice and Adapt It Themselves</h1>
+  <p class="byline"><strong>Felicia Fang-Yi Tan</strong><sup>1</sup>, Haley Noh<sup>2</sup>, Moritz Alexander Messerschmidt<sup>3</sup>, Vedant Das Swain<sup>1</sup>, Oded Nov<sup>1</sup></p>
+  <p class="aff"><sup>1</sup>New York University, Tandon School of Engineering &nbsp; <sup>2</sup>Columbia University &nbsp; <sup>3</sup>Augmented Human Lab, National University of Singapore</p>
+  <div class="buttons"><a href="https://drive.google.com/file/d/1_0Vtc1F-Ja1dsUtEBfkz1H8dU-eIHYnh/view?usp=sharing"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Preprint (PDF)</a></div>
+  
+
+  <p class="tldr reveal">When users choose not to contest ill-fitting advice, signals of mismatch go unrecorded in conversation logs, hidden from oversight and absent from the data models learn from. Of those who rated the advice an imperfect fit, 76.2% did not contest it, including 70.0% of those who evaluated it critically. We term this the evaluation–contestation gap.</p>
+  <div class="keynums reveal"><div class="keynum"><b>737</b><span>users recalled a recent AI advice-seeking episode</span></div><div class="keynum"><b>76.2%</b><span>of those who rated the advice an imperfect fit did not contest it</span></div><div class="keynum"><b>70.0%</b><span>of those who evaluated it critically did not contest</span></div><div class="keynum"><b>71.8%</b><span>of non-contesters silently adapted the AI advice themselves</span></div></div>
+
+  <h2 class="reveal">Why it matters</h2>
+  <p class="reveal">AI chatbots have become pervasive sounding boards for personal decision-making. Conversational interfaces afford users a way to supply missing context, correct assumptions, and challenge advice as they receive it, yet conversational logs rarely show explicit user feedback or in-session correction. Because logs cannot distinguish user satisfaction from unvoiced dissatisfaction, advice that users perceive as misfitting can go undetected.</p>
+  <figure class="fig reveal">
+  <img src="../../assets/projects/evaluation-contestation-gap/fig1-framework.png" alt="Conceptual framework of the evaluation-contestation gap" onerror="this.closest('figure').classList.add('missing')">
+  <div class="ph"><b>Figure needed:</b> <code>assets/projects/evaluation-contestation-gap/fig1-framework.png</code><br>Paper Fig. 1: the conceptual framework of the evaluation-contestation gap.</div>
+  <figcaption>The evaluation-contestation gap: afforded versus realized contestability.</figcaption>
+</figure>
+
+  <h2 class="reveal">What we did</h2>
+  <ol class="steps reveal"><li><div><strong>Recall-based survey (N = 737).</strong> U.S.-based adults, each anchored to an AI advice-seeking conversation about a personal decision that they located in their own chat history.</div></li><li><div><strong>Research questions.</strong> (RQ1) How frequently, and in what ways, do users contest misfitting AI advice? (RQ2) Does critical evaluation of misfitting advice increase contestation behavior? (RQ3) When advice is not contested, what workarounds do users adopt, and how do they explain their silence?</div></li><li><div><strong>Definition.</strong> We define contestation in conversational advice-seeking as direct, in-session pushback (i.e., correcting, disagreeing with, or challenging an assistant's output within the ongoing dialogue).</div></li></ol>
+  
+  
+
+  <h2 class="reveal">What we found</h2>
+  <div class="finding reveal"><strong>An evaluation–contestation gap.</strong> Of the 400 participants who judged the advice a misfit for their situation, only 23.8% reported contesting it. Critical evaluation was associated with contestation, but weakly: high evaluators contested more often than lower evaluators (30.0% vs. 16.6%), yet 70.0% of high evaluators still did not contest.</div><div class="finding reveal"><strong>Non-contesters absorbed the misfit.</strong> Most non-contesting users (71.8%) accepted the advice and adapted it themselves. Rationales reflected satisficing and agency considerations: treating the AI as one input among several (24.4%), deeming the imperfect advice “good enough” for their purpose (22.8%), or trusting and deferring to the AI (20.5%).</div><div class="finding reveal"><strong>Contestation reflected where users located the fault, rather than the stakes.</strong> Among advice misfit cases, it was associated with system attribution (e.g., the AI making wrong assumptions), but not with self-attribution (e.g., under-specifying their situation) or with urgency, consequence severity, and personal relevance.</div>
+  
+
+  <h2 class="reveal">Implications for design and governance</h2>
+  <ul class="impl reveal"><li><strong>Elicit context rather than wait for correction.</strong> Because contestation most often supplied missing context, AI assistants can ask for that context before or alongside advice, for example by stating an assumption and asking whether it holds.</li><li><strong>Revise when given new information, not simply when challenged.</strong> Models can abandon correct positions when users push back without good reason. AI assistants should treat added context as information to reason with, revising advice where it changes the answer and explaining why where it does not.</li><li><strong>Silence is not evidence of fit.</strong> Evaluations that infer AI advice quality from the absence of complaint are likely to overstate fit and also distort it. Where fit matters, it must be measured directly.</li><li><strong>Audit contestation mechanisms by use.</strong> Rights to contest automated decisions are typically assessed by whether a recourse channel exists. Our findings suggest also measuring what share of affected people use the channel and why others do not.</li></ul>
+  
+
+  
+</main>
+</body>
+</html>

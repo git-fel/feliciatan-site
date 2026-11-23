@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counting the Wait | Felicia Tan</title>
+  <meta name="description" content="An online experiment (n = 425) on temporal feedback during system-imposed waits: how Remaining-Time, Elapsed-Time or No Time Display during a 10-, 30- or 60-second wait shapes perceived waiting, frustration and post-wait task performance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,100;1,9..144,300..500,100&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="stylesheet" href="../../assets/style.css">
+  <script src="../../assets/site.js" defer></script>
+</head>
+<body>
+<div class="aurora"></div>
+<nav><a class="brand" href="../../">Felicia Tan</a><a href="../../">Home</a><a class="here" href="../../research.html">Research</a></nav>
+<main class="proj">
+  <a class="crumb" href="../../research.html">&larr; All research</a>
+  <p><span class="tag">ACM CHI 2026</span></p>
+  <h1>Counting the Wait: Effects of Temporal Feedback on Downstream Task Performance and Perceived Wait-Time Experience during System-Imposed Delays</h1>
+  <p class="byline"><strong>Felicia Fang-Yi Tan</strong><sup>1</sup>, Oded Nov<sup>1</sup></p>
+  <p class="aff"><sup>1</sup>New York University, Tandon School of Engineering</p>
+  <div class="buttons"><a href="https://dl.acm.org/doi/full/10.1145/3772318.3790475"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>Paper (ACM Digital Library)</a><a href="#cite"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>BibTeX</a></div>
+  
+
+  <p class="tldr reveal">Temporal feedback mode shapes how waiting is perceived: Remaining-Time feedback increased frustration relative to Elapsed-Time feedback, while No Time Display made waits feel longer and heightened ambiguity. These experiential differences did not translate into differences in post-wait task performance.</p>
+  <div class="keynums reveal"><div class="keynum"><b>425</b><span>participants in an online experiment</span></div><div class="keynum"><b>3 × 3</b><span>between-subjects: feedback mode × wait duration</span></div><div class="keynum"><b>10 / 30 / 60 s</b><span>system-imposed wait durations</span></div><div class="keynum"><b>p > .05</b><span>for all effects on post-wait performance (ANCOVA)</span></div></div>
+
+  <h2 class="reveal">Why it matters</h2>
+  <p class="reveal">System-imposed wait times can significantly disrupt digital workflows, affecting user experience and task performance. Prior HCI research has examined how temporal feedback, such as feedback mode (Elapsed-Time vs. Remaining-Time), shapes wait-time perception. However, few studies have investigated how such feedback influences users' downstream task performance, as well as overall affective and cognitive experience.</p>
+  <figure class="fig reveal">
+  <img src="../../assets/projects/counting-the-wait/fig3-conditions.png" alt="The three wait-screen conditions" onerror="this.closest('figure').classList.add('missing')">
+  <div class="ph"><b>Figure needed:</b> <code>assets/projects/counting-the-wait/fig3-conditions.png</code><br>Paper Fig. 3: the three wait-screen conditions (No Time Display, Elapsed-Time, Remaining-Time).</div>
+  <figcaption>The three wait screens: (A) No Time Display, (B) Elapsed-Time, (C) Remaining-Time. The numeric display updates once per second (1 Hz); all conditions show the same base message.</figcaption>
+</figure>
+
+  <h2 class="reveal">What we did</h2>
+  <ol class="steps reveal"><li><div><strong>Task.</strong> A visual reasoning task adapted from CLEVR: counting questions over synthetic 3D scenes, 30 items in two 15-question segments.</div></li><li><div><strong>Wait.</strong> Between the segments, a system-imposed wait of 10, 30 or 60 seconds with a Remaining-Time, Elapsed-Time or No Time Display, in a 3 × 3 between-subjects design. The numeric display updated once per second.</div></li><li><div><strong>Measures.</strong> Post-wait performance (Segment 2, controlling for Segment 1), perception of the wait (recall, perceived duration), psychological experience (NASA-TLX workload, emotional state) and a qualitative reflection on how the wait influenced experience.</div></li></ol>
+  <figure class="fig reveal" style="width:110%;margin-left:-5%">
+  <img src="../../assets/projects/counting-the-wait/fig2-workflow.png" alt="Overview of the study workflow" onerror="this.closest('figure').classList.add('missing')">
+  <div class="ph"><b>Figure needed:</b> <code>assets/projects/counting-the-wait/fig2-workflow.png</code><br>Paper Fig. 2: overview of the study workflow.</div>
+  <figcaption>Study workflow: Task Segment 1, random assignment to one of nine wait conditions, Task Segment 2, post-task survey (between-subjects, N = 425).</figcaption>
+</figure>
+  
+
+  <h2 class="reveal">What we found</h2>
+  <div class="finding reveal"><strong>Remaining-Time increased frustration.</strong> Remaining-Time elicited significantly higher frustration than Elapsed-Time (M = 30.7 vs. 24.1, p = .019) and lower pleasantness (M = 5.33 vs. 5.67, p = .025).</div><div class="finding reveal"><strong>No Time Display made waits feel longer.</strong> Perceived duration was significantly longer with No Time Display than with Remaining-Time (M = 4.06 vs. 3.70, p < .01); there were no other pairwise differences. Interpretive Ambiguity (“Is it still working?”) was most frequent in longer No Time Display conditions.</div><div class="finding reveal"><strong>Experiential differences did not translate into performance.</strong> Controlling for Segment 1 performance, the ANCOVA revealed no significant main effects of Temporal Feedback Mode or Wait Duration, nor an interaction (all p > .05).</div><div class="finding reveal"><strong>Participants described the wait in different ways.</strong> In free-text responses (n = 383), 34.5% reported no influence, 25.3% Task Re-Engagement, 16.7% Restorative Pause and 14.9% Affective Dysregulation. Restorative Pause was more frequent in the Remaining-Time condition.</div>
+  
+
+  <h2 class="reveal">Design considerations</h2>
+  <ul class="impl reveal"><li><strong>Reduce uncertainty when predictability is the primary concern.</strong> Consider Remaining-Time displays for longer or potentially disruptive pauses. This mode consistently reduced Interpretive Ambiguity, but it also elevated frustration and lowered pleasantness.</li><li><strong>Support emotional comfort through gentler temporal cues.</strong> Elapsed-Time displays: participants reported lower frustration and higher pleasantness. A balanced default where affective comfort or sustained engagement matters more than precise predictability.</li><li><strong>Temporal feedback modes shape experience more than performance.</strong> None of the modes improved post-wait performance, so designers can select a mode based on experiential priorities (such as comfort, clarity, trust or perceived pace), while attending to each mode's trade-offs.</li></ul>
+  <p class="note reveal">These are context-sensitive considerations rather than prescriptive rules. The waits were controlled and known in advance, shown as a plain numeric label in a short, repetitive visual reasoning task. The results should therefore not be generalized to arbitrary or unpredictable delays.</p>
+
+  <h2 id="cite" class="reveal">Cite</h2>
+  <pre id="bib">@inproceedings{tan2026counting,
+  title     = {Counting the Wait: Effects of Temporal Feedback on Downstream Task Performance and Perceived Wait-Time Experience during System-Imposed Delays},
+  author    = {Tan, Felicia Fang-Yi and Nov, Oded},
+  booktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},
+  series    = {CHI '26},
+  year      = {2026},
+  publisher = {ACM},
+  doi       = {10.1145/3772318.3790475}
+}</pre>
+  <button class="copy" data-copy="#bib">Copy BibTeX</button>
+</main>
+</body>
+</html>
