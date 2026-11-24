@@ -24,7 +24,7 @@
   
 
   <p class="tldr reveal">PersonaMail addresses three challenges identified in formative studies through structured communication factor exploration, granular editing controls, and adaptive reuse of successful strategies. Compared against standard LLM interfaces, it showed improved efficiency in both immediate and repeated use, alongside higher user satisfaction.</p>
-  <div class="keynums reveal"><div class="keynum"><b>3</b><span>key challenges identified in formative studies</span></div><div class="keynum"><b>16</b><span>participants in the evaluation</span></div><div class="keynum"><b>34.8%</b><span>higher draft quality than standard LLM interfaces (M = 5.81/7 vs. 4.31/7)</span></div><div class="keynum"><b>42%</b><span>faster task completion with adaptive reuse</span></div></div>
+  <div class="keynums reveal"><div class="keynum"><b>3</b><span>key challenges identified in formative studies</span></div><div class="keynum"><b>16</b><span>participants in the evaluation</span></div><div class="keynum"><b>34.8%</b><span>higher draft quality than standard LLM interfaces</span></div><div class="keynum"><b>42%</b><span>faster task completion with adaptive reuse</span></div></div>
 
   <h2 class="reveal">Why it matters</h2>
   <p class="reveal">LLM-assisted writing has seen rapid adoption in interpersonal communication, yet current systems often fail to capture the subtle tones essential for effectiveness. Email writing exemplifies this challenge: effective messages require careful alignment with intent, relationship, and context beyond mere fluency.</p>
@@ -34,7 +34,7 @@
   <figcaption>PersonaMail versus a traditional LLM interface.</figcaption>
 </figure>
 
-  <h2 class="reveal">What we did</h2>
+  <h2 class="reveal">What the paper did</h2>
   <ol class="steps reveal"><li><div><strong>Formative studies.</strong> Three key challenges: articulating nuanced communicative intent, making modifications at multiple levels of granularity, and reusing effective tone strategies across messages.</div></li><li><div><strong>PersonaMail.</strong> A system that addresses these gaps through structured communication factor exploration, granular editing controls, and adaptive reuse of successful strategies.</div></li><li><div><strong>Evaluation.</strong> A user study with 16 participants comparing PersonaMail against a standard LLM interface (Gemini with Gmail).</div></li></ol>
   <figure class="fig reveal">
   <img style="width:70%;display:block;margin:0 auto" src="../../assets/projects/personamail/editor.png" alt="The PersonaMail email editor with a selected sentence and suggested rewrites" onerror="this.closest('figure').classList.add('missing')">
@@ -43,8 +43,8 @@
 </figure>
   
 
-  <h2 class="reveal">What we found</h2>
-  <div class="finding reveal"><strong>Higher draft quality, lower cognitive load.</strong> Structured factor exploration produced drafts rated 34.8% higher in quality than standard LLM interfaces (M = 5.81/7 vs. 4.31/7, p < 0.001) while reducing cognitive load by 24.5%.</div><div class="finding reveal"><strong>Targeted adjustments halved revision time.</strong> Intent-driven modifications and QuickFix enabled 61.94% of revisions through targeted adjustments, halving revision time.</div><div class="finding reveal"><strong>Adaptive reuse reduced setup time.</strong> Adaptive reuse reduced setup time by 58.5% in subsequent uses, with 42% faster task completion. First-time use required greater upfront investment in articulation (10 min 21 s vs. 6 min 2 s of prompting).</div><div class="finding reveal"><strong>Concrete alternatives avoided unproductive deliberation.</strong> Rather than becoming trapped in unproductive deliberation, users received concrete alternatives that allowed them to quickly navigate to preferred versions.</div>
+  <h2 class="reveal">What the paper found</h2>
+  <div class="finding reveal"><strong>Higher draft quality, lower cognitive load.</strong> Structured factor exploration produced drafts rated 34.8% higher in quality than standard LLM interfaces while reducing cognitive load by 24.5%.</div><div class="finding reveal"><strong>Targeted adjustments halved revision time.</strong> Intent-driven modifications and QuickFix enabled 61.94% of revisions through targeted adjustments, halving revision time.</div><div class="finding reveal"><strong>Adaptive reuse reduced setup time.</strong> Adaptive reuse reduced setup time by 58.5% in subsequent uses, with 42% faster task completion. First-time use required greater upfront investment in articulation.</div><div class="finding reveal"><strong>Concrete alternatives avoided unproductive deliberation.</strong> Rather than becoming trapped in unproductive deliberation, users received concrete alternatives that allowed them to quickly navigate to preferred versions.</div>
   <figure class="fig reveal">
   <img style="width:80%;display:block;margin:0 auto" src="../../assets/projects/personamail/time.svg" alt="Time to write an email: baseline 15 min 24 s, PersonaMail first use 17 min 51 s, PersonaMail reuse 8 min 55 s" onerror="this.closest('figure').classList.add('missing')">
   <div class="ph"><b>Figure needed:</b> <code>assets/projects/personamail/time.svg</code><br>Simple stacked bars of mean task time.</div>

@@ -18,14 +18,8 @@
   --sans: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --radius: 22px;
   --ease: cubic-bezier(.22, .8, .24, 1);
+  color-scheme: light;      /* always light, even if the phone is in dark mode */
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #1a1512; --surface: #241d18; --ink: #f3ebe2; --muted: #b3a698;
-    --line: rgba(243, 235, 226, .12); --accent: #e0a98a; --accent2: #e3c08f; --soft: #2b231d;
-  }
-}
-@media (prefers-color-scheme: dark) { .filters button.on, .buttons a, .more, ::selection { color: #1a1512; } }
 
 /* ---------- 2. Base ---------- */
 * { box-sizing: border-box; }

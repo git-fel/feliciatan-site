@@ -31,19 +31,19 @@
   <figure class="fig reveal">
   <img style="width:80%;display:block;margin:0 auto" src="../../assets/projects/response-latency/ttft.svg" alt="Timeline of response latency, defined as time to first token (TTFT): from prompt submission to the first token of the reply" onerror="this.closest('figure').classList.add('missing')">
   <div class="ph"><b>Figure needed:</b> <code>assets/projects/response-latency/ttft.svg</code><br>Timeline of the manipulated variable, TTFT.</div>
-  <figcaption>Response latency is operationalized as time to first token (TTFT): the delay between submitting a prompt and the first token of the reply appearing. We set it to 2, 9 or 20 seconds.</figcaption>
+  <figcaption>Response latency is operationalized as time to first token (TTFT): the delay between submitting a prompt and the first token of the reply appearing. It was set to 2, 9 or 20 seconds.</figcaption>
 </figure>
 
-  <h2 class="reveal">What we did</h2>
+  <h2 class="reveal">What the paper did</h2>
   <ol class="steps reveal"><li><div><strong>Interface.</strong> A custom GPT-4o interface in which time-to-first-token latency was set to 2, 9 or 20 seconds.</div></li><li><div><strong>Design.</strong> A 3 (Latency) × 2 (Task Type) between-subjects experiment. Creation tasks involve producing new content (e.g., writing, brainstorming, drafting). Advice tasks involve providing guidance, critique or evaluation.</div></li><li><div><strong>Measures.</strong> Interaction logs, post-task ratings of the perceived quality of the LLM's responses, and open-ended responses about the delays.</div></li></ol>
   <figure class="fig reveal">
   <img style="width:95%;display:block;margin:0 auto" src="../../assets/projects/response-latency/fig1-design.png" alt="The 2 by 3 study design" onerror="this.closest('figure').classList.add('missing')">
   <div class="ph"><b>Figure needed:</b> <code>assets/projects/response-latency/fig1-design.png</code><br>Paper Fig. 1: the study design, six groups from two task types and three latency levels.</div>
   <figcaption>Study design.</figcaption>
 </figure>
-  <p class="note reveal">We also contribute a reusable experimental platform for studying timing effects in human-LLM interaction, comprising an end-to-end LLM interaction system with latency control and interaction logging (<a href="https://github.com/AugmentMo/gpt-chatbot-emu">code on GitHub</a>), and the study's anonymized dataset (<a href="https://osf.io/367cw">OSF</a>).</p>
+  <p class="note reveal">The paper also contributes a reusable experimental platform for studying timing effects in human-LLM interaction, comprising an end-to-end LLM interaction system with latency control and interaction logging (<a href="https://github.com/AugmentMo/gpt-chatbot-emu">code on GitHub</a>), and the study's anonymized dataset (<a href="https://osf.io/367cw">OSF</a>).</p>
 
-  <h2 class="reveal">What we found</h2>
+  <h2 class="reveal">What the paper found</h2>
   <div class="finding reveal"><strong>Behavior was robust to latency, yet varied by task type.</strong> Creation tasks elicited more frequent prompting than Advice tasks. Latency had no significant effect on the behavioral measures.</div><div class="finding reveal"><strong>2-second latencies were rated less thoughtful and useful.</strong> Participants who experienced 2-second latencies rated the LLM's outputs less thoughtful and useful than those who experienced 9- or 20-second latencies.</div><div class="finding reveal"><strong>Delays were attributed to AI deliberation.</strong> Long waits occasionally shifted this interpretation toward frustration or concerns about reliability.</div>
   <div class="callout reveal"><b>In participants' words</b>“It [the AI] was gathering information to formulate a thoughtful response.”<br>“I had longer to contemplate what my next query would be.”</div>
 
